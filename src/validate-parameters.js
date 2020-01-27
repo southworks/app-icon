@@ -20,9 +20,11 @@ module.exports = function validateParameters(parameters) {
   const adaptiveIcons = !!parameters.adaptiveIcons;
   const backgroundIcon = parameters.backgroundIcon || 'icon.background.png';
   const foregroundIcon = parameters.foregroundIcon || 'icon.foreground.png';
+  const theme = parameters.theme || "";
 
   return {
     sourceIcon,
+    theme,
     backgroundIcon,
     foregroundIcon,
     searchRoot,

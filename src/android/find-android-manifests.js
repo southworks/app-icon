@@ -8,10 +8,15 @@ const rexNodeModules = new RegExp('node_modules');
 const rexBuildFolder = new RegExp(`${path.normalize('/build/').replace(/\\/g, '\\\\')}`);
 
 //  Given a search root, finds all Android manifests.
-module.exports = async function findAndroidManifests(searchRoot) {
+module.exports = async function findAndroidManifests(searchRoot, theme) {
   debug(`searching ${searchRoot} for android manifests`);
   const absoluteSearchRoot = path.resolve(searchRoot);
-  return find(searchRoot, (file, stat) => {
+  return find(searchRoot, (file, stat) => {  
+
+    if(theme && !file.split("\\").includes(theme)) {
+      return false;
+    }
+
     //  Anything which is a directory or does not end with 'AndroidManifest.xml'
     //  we can immediately ignore.
     if (!file.match(/AndroidManifest.xml/) || stat.isDirectory()) {

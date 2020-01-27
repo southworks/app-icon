@@ -1,6 +1,6 @@
 {
   "name": "app-icon",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "Automatic icon resizing for Mobile Apps. Supports Native, Cordova and React Native. Inspired by cordova-icon.",
   "main": "./src/index.js",
   "engines": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dwmkerr/app-icon.git"
+    "url": "git+https://github.com/southworks/app-icon.git"
   },
   "keywords": [
     "cordvoa",
@@ -31,9 +31,9 @@
   "author": "Dave Kerr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dwmkerr/app-icon/issues"
+    "url": "https://github.com/southworks/app-icon/issues"
   },
-  "homepage": "https://github.com/dwmkerr/app-icon#readme",
+  "homepage": "https://github.com/southworks/app-icon#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.1.0",

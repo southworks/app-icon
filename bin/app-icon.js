@@ -41,6 +41,7 @@ program
   .command('generate')
   .description('Generate all app icons from a single input icon')
   .option('-i, --icon [icon]', "The icon to use. Defaults to 'icon.png'", 'icon.png')
+  .option('-t, --theme [theme]', "The theme for which generate the images")
   .option('-s, --search [optional]', "The folder to search from. Defaults to './'", './')
   .option('-p, --platforms [optional]', "The platforms to generate icons for. Defaults to 'android,ios'", 'android,ios')
   .option('--background-icon [optional]', "The background icon path. Defaults to 'icon.background.png'")
@@ -49,6 +50,7 @@ program
   .action(async (parameters) => {
     const {
       icon,
+      theme,
       backgroundIcon,
       foregroundIcon,
       search,
@@ -70,6 +72,7 @@ program
     try {
       await generate({
         sourceIcon: icon,
+        theme: theme,
         backgroundIcon,
         foregroundIcon,
         searchRoot: search,

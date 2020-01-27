@@ -10,6 +10,7 @@ module.exports = async function generate(parameters) {
   //  Validate and coerce the parameters.
   const {
     sourceIcon,
+    theme,
     backgroundIcon,
     foregroundIcon,
     searchRoot,
@@ -38,7 +39,7 @@ module.exports = async function generate(parameters) {
 
     return null;
   }));
-  const manifests = await findAndroidManifests(searchRoot);
+  const manifests = await findAndroidManifests(searchRoot, theme);
   await Promise.all(manifests.map(async (manifest) => {
     if (!platforms.includes('android')) return null;
     console.log(`Found Android Manifest: ${manifest}...`);
